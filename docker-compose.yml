@@ -28,19 +28,18 @@ services:
     ports:
       - 8080:80
     environment:
-      - PMA_HOST=db #Set le container db as Host
+      - PMA_HOST=db #Set le container 'db' as Host
     depends_on:
       - db
-
-  front:
-    build: ./frontend
-    volumes:
-      - ./frontend:/app
-      - /app/nodes_modules
-    ports:
-      - 3000:3000
-    depends_on:
-      - web_server
+  # front:
+  #   build: ./frontend
+  #   volumes:
+  #     - ./frontend:/app
+  #     - /app/nodes_modules
+  #   ports:
+  #     - 3000:3000
+  #   depends_on:
+  #     - web_server
 
 
 
