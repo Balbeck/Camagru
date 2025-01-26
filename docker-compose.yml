@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  web_server:
+    image: php:apache
+    volume:
+      - ./:/var/www/html/
+    ports:
+      - 80:80 # conaiter:machine
+
+  db:
+    image: mysql:latest
+    volume:
+      - db:/var/lib/mysql/
+    environment:
+     - MYSQL_ROOT_PASSWORD=MonRootyPass
+     - MYSQL_DATABASE=camagru_db
+     - MYSQL_USER=serviceMan
+     - MYSQL_PASSWORD=psw
+
+  db_manager:
+  front:
+
+volumes:
+  db:
