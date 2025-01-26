@@ -9,7 +9,7 @@
         <h1> Test Pour PHP </h1>
         <p>
             <?php
-                echo 'Hello Docker !';
+                echo 'Hello Docker ! 🐳 ';
                 
             ?>
         </p>

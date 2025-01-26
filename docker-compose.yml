@@ -2,7 +2,8 @@ version: '3'
 
 services:
   web_server:
-    image: php:apache
+    # image: php:apache # on utiliplus une Image on va construire a partir du Dockerfile pour activer php avec Apache
+    build: ./backend/
     volume:
       - ./:/var/www/html/
     ports:
@@ -19,7 +20,15 @@ services:
      - MYSQL_PASSWORD=psw
 
   db_manager:
-  front:
+    image: phpmyadmin
+    restart: always
+    port:
+      - 8080:80
+    environment:
+      - PMA_HOST=db #Set le container db as Host
+    depends_on:
+      - db
+  # front:
 
 volumes:
-  db:
+  db: # creer un volume named db
