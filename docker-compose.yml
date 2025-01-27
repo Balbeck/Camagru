@@ -14,7 +14,8 @@ services:
       - db_manager
 
   db:
-    image: mysql:latest
+    # image: mysql:latest
+    image: mariadb:11-ubi
     restart: unless-stopped
     volumes:
       - db:/var/lib/mysql/
