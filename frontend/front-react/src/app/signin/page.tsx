@@ -27,13 +27,18 @@ export default function SignIn() {
             placeholder="******************"
           />
         </div>
-        <div className="flex items-center justify-between">
-          <Button href="#" className="bg-blue-500 hover:bg-blue-700 text-white">
+        <div className="flex flex-col items-center space-y-4">
+          <Button href="#" className="bg-blue-500 hover:bg-blue-700 text-white w-full text-center">
             Sign In
           </Button>
-          <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
-            Forgot Password?
-          </a>
+          <div className="flex justify-between w-full text-sm">
+            <a className="font-bold text-blue-500 hover:text-blue-800" href="/signup">
+              Don&apos;t have an account?
+            </a>
+            <a className="font-bold text-blue-500 hover:text-blue-800" href="/forgot-password">
+              Forgot Password?
+            </a>
+          </div>
         </div>
       </form>
     </div>
