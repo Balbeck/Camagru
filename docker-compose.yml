@@ -6,7 +6,7 @@ services:
     build: ./backend/
     restart: unless-stopped
     volumes:
-      - ./:/var/www/html/
+      - ./backend/:/var/www/html/
     ports:
       - 80:80
     networks:
