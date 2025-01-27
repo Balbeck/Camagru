@@ -2,7 +2,6 @@ version: '3.8'
 
 services:
   web_server:
-    # image: php:apache # on utiliplus une Image on va construire a partir du Dockerfile pour activer php avec Apache
     build: ./backend/
     restart: unless-stopped
     volumes:

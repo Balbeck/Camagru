@@ -82,3 +82,4 @@ class AuthController {
         echo json_encode($data);
     }
 }
+?>

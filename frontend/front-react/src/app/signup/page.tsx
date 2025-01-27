@@ -34,9 +34,11 @@ export default function SignUp() {
 
       if (response.ok) {
         router.push('/mainIn');
-      } else {
+      } 
+      else {
         setError(data.message || 'An error occurred during sign up');
       }
+
     } catch (error: unknown) {
       console.error('Error during sign up:', error);
       setError('Network error. Please try again.');
@@ -47,7 +49,9 @@ export default function SignUp() {
     <div className="max-w-md mx-auto mt-10">
       <h2 className="text-2xl font-bold mb-4 text-center">Sign Up</h2>
       {error && <p className="text-red-500 text-center mb-4">{error}</p>}
+      
       <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
             Username
@@ -62,6 +66,7 @@ export default function SignUp() {
             required
           />
         </div>
+
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
             Email
@@ -76,6 +81,7 @@ export default function SignUp() {
             required
           />
         </div>
+        
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
             Password
@@ -90,6 +96,7 @@ export default function SignUp() {
             required
           />
         </div>
+        
         <div className="mb-6">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="confirm-password">
             Confirm Password
@@ -104,15 +111,19 @@ export default function SignUp() {
             required
           />
         </div>
+        
         <div className="flex items-center justify-between">
           <Button type="submit" className="bg-green-500 hover:bg-green-700 text-white">
             Sign Up
           </Button>
+
           <a className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="/signin">
             Already have an account?
           </a>
         </div>
+
       </form>
+
     </div>
   );
 }
