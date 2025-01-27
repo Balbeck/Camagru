@@ -12,7 +12,11 @@ Front
 # Launch App
 docker compose up --build <br>
 
-
+# Stack
+ - php:8.2-apache
+ - mysql:8.1.0
+ - phpmyadmin:5.2.1
+ - node:18 <br>
 
 ## Frontend
 ### Next.js/React App <br>
