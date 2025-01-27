@@ -10,7 +10,7 @@ services:
     ports:
       - 80:80
     networks:
-      - camagru_network
+      - camagru_back_network
     depends_on:
       - db
       - db_manager
@@ -26,7 +26,7 @@ services:
       - MYSQL_USER=serviceMan
       - MYSQL_PASSWORD=psw
     networks:
-      - camagru_network
+      - camagru_back_network
 
 
   db_manager:
@@ -37,7 +37,7 @@ services:
     environment:
       - PMA_HOST=db #Set le container 'db' as Host
     networks:
-      - camagru_network
+      - camagru_back_network
     depends_on:
       - db
 
@@ -55,7 +55,9 @@ services:
       - /app/node_modules
 
 
-
+networks:
+  camagru_back_network:
+    driver: bridge
 
 volumes:
   db: # creer un volume named db
