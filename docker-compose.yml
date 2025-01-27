@@ -9,13 +9,14 @@ services:
       - ./:/var/www/html/
     ports:
       - 80:80
+    networks:
+      - camagru_network
     depends_on:
       - db
       - db_manager
 
   db:
-    # image: mysql:latest
-    image: mariadb:11-ubi
+    image: mysql:8.1.0
     restart: unless-stopped
     volumes:
       - db:/var/lib/mysql/
@@ -24,14 +25,19 @@ services:
       - MYSQL_DATABASE=camagru_db
       - MYSQL_USER=serviceMan
       - MYSQL_PASSWORD=psw
+    networks:
+      - camagru_network
+
 
   db_manager:
-    image: phpmyadmin
+    image: phpmyadmin:5.2.1
     restart: always
     ports:
       - 8080:80
     environment:
       - PMA_HOST=db #Set le container 'db' as Host
+    networks:
+      - camagru_network
     depends_on:
       - db
 
