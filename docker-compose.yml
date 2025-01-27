@@ -16,8 +16,7 @@ services:
       - db_manager
 
   db:
-    # image: mysql:8.1.0
-    image: mysql:latest
+    image: mysql:9.2.0
     restart: unless-stopped
     volumes:
       - db:/var/lib/mysql/
@@ -28,7 +27,6 @@ services:
       - MYSQL_PASSWORD=psw
     networks:
       - camagru_back_network
-
 
   db_manager:
     image: phpmyadmin:5.2.1
@@ -50,11 +48,10 @@ services:
     depends_on:
       - web_server
     volumes:
-    # Volume pour le DEV permetant rebuild en temps reel
+      # Volume pour le DEV permetant rebuild en temps reel
       - ./frontend/front-react:/app
-    # Assure l'utilisation des modules installes dans le container
+      # Assure l'utilisation des modules installes dans le container
       - /app/node_modules
-
 
 networks:
   camagru_back_network:
