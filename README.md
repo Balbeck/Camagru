@@ -1,4 +1,4 @@
-## TO DO : --- > 
+# [ TO DO ] 
 Next React Crud using PHP API and MySql:
 Front
  - Install Node, npm
@@ -9,7 +9,7 @@ Front
  - Create DB in MySql
  - Create Get, Post, Put, and Delete API in PHP
 
-## Launch App
+# Launch App
 docker compose up --build
 
 ## Frontend
