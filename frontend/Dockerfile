@@ -9,4 +9,8 @@ RUN npm run build
 
 EXPOSE 3000
 
-CMD [ "npm", "start" ]
+# Dev for auto rebuilt on file change
+CMD [ "npm", "run", "dev" ]
+
+# Prod
+# CMD [ "npm", "start" ]
