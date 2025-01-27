@@ -45,9 +45,10 @@
 //   );
 // }
 
+'use client';
 
 import { useState, FormEvent } from 'react';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import Button from '@/components/Button';
 
 export default function SignIn() {

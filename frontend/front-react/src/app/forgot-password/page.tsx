@@ -29,9 +29,10 @@
 //   );
 // }
 
+'use client';
 
 import { useState, FormEvent } from 'react';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import Button from '@/components/Button';
 
 export default function ForgotPassword() {
@@ -59,7 +60,7 @@ export default function ForgotPassword() {
       if (response.ok) {
         setMessage('Password reset instructions have been sent to your email.');
         // Optionally, redirect after a delay:
-        // setTimeout(() => router.push('/signin'), 3000);
+        setTimeout(() => router.push('/signin'), 3000);
       } else {
         setError(data.message || 'An error occurred while processing your request');
       }
