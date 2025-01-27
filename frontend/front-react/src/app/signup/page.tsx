@@ -37,7 +37,8 @@ export default function SignUp() {
       } else {
         setError(data.message || 'An error occurred during sign up');
       }
-    } catch (err) {
+    } catch (error: unknown) {
+      console.error('Error during sign up:', error);
       setError('Network error. Please try again.');
     }
   };

@@ -30,7 +30,8 @@ export default function SignIn() {
       } else {
         setError(data.message || 'An error occurred during sign in');
       }
-    } catch (err) {
+    } catch (error: unknown) {
+      console.error('Error during sign in:', error);
       setError('Network error. Please try again.');
     }
   };
