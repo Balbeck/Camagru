@@ -2,10 +2,11 @@ version: '3.8'
 
 services:
   web_server:
+    container_name: back-apache-php
     build: ./backend/
     restart: unless-stopped
     volumes:
-      - ./backend/:/var/www/html/
+      - ./backend/php/:/var/www/html/
     ports:
       - 80:80
     networks:
@@ -15,13 +16,14 @@ services:
       - db_manager
 
   db:
+    container_name: mysql-db
     image: mysql:9.2.0
     restart: unless-stopped
     ports:
       - 3306:3306
     volumes:
       - db:/var/lib/mysql/
-      - ./mysql:/docker-entrypoint-initdb.d
+      - ./backend/mysql/:/docker-entrypoint-initdb.d
     environment:
       - MYSQL_ROOT_PASSWORD=MonRootyPass
       - MYSQL_DATABASE=camagru_db
@@ -31,6 +33,7 @@ services:
       - camagru_back_network
 
   db_manager:
+    container_name: phpmyadmin
     image: phpmyadmin:5.2.1
     restart: always
     ports:
@@ -44,6 +47,7 @@ services:
       - db
 
   front:
+    container_name: front-next.js
     build: ./frontend/
     restart: unless-stopped
     ports:
