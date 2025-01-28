@@ -23,13 +23,13 @@ $requestMethod = $_SERVER["REQUEST_METHOD"];
 $controller = new AuthController();
 
 switch($uri[2]) {
-    case 'signup':
+    case '/api/signup':
         $controller->signup($requestMethod);
         break;
-    case 'signin':
+    case '/api/signin':
         $controller->signin($requestMethod);
         break;
-    case 'forgot-password':
+    case '/api/forgot-password':
         $controller->forgotPassword($requestMethod);
         break;
     default:
